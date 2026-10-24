@@ -1,0 +1,59 @@
+/* Heddle page style, on top of docutils' minimal.css. */
+:root { color-scheme: light dark; --hd-page:#ffffff; --hd-text:#1f2328; --hd-muted:#59636e;
+  --hd-rule:#d0d7de; --hd-code:#f6f8fa; --hd-link:#0969da; --hd-warn-bg:#fff8c5;
+  --hd-warn-rule:#d4a72c; --hd-err-bg:#ffebe9; --hd-err-rule:#cf222e; }
+@media (prefers-color-scheme: dark) {
+  :root { --hd-page:#0d1117; --hd-text:#e6edf3; --hd-muted:#9198a1; --hd-rule:#3d444d;
+    --hd-code:#161b22; --hd-link:#4493f8; --hd-warn-bg:#272115; --hd-warn-rule:#9e6a03;
+    --hd-err-bg:#25171c; --hd-err-rule:#f85149; }
+}
+html { background: var(--hd-page); }
+body { background: var(--hd-page); color: var(--hd-text); max-width: 60rem;
+  margin: 0 auto; padding: 1.5rem 1rem 4rem;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { padding: 0; }
+h1.title { margin-bottom: .25rem; }
+a { color: var(--hd-link); }
+code, pre, tt, .literal { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+span.literal, code.literal { background: var(--hd-code); border-radius: 4px; padding: 0 .25em;
+  font-size: .9em; }
+a.reference:has(> .sym) { text-decoration: none; }
+a.reference > .sym { color: var(--hd-link); }
+a.reference:hover > .sym { text-decoration: underline; }
+table.docinfo { margin: .25rem 0 1.25rem; color: var(--hd-muted); font-size: .9em; }
+table.docinfo th { padding-right: .75rem; font-weight: 500; }
+dl dt { font-weight: 600; }
+dl dt .classifier { font-weight: 400; font-style: normal; color: var(--hd-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .9em; }
+dl dt .classifier:before { margin: 0 .4em; }
+h1, h2, h3, h4 { line-height: 1.25; }
+h2 { margin-top: 2.25rem; padding-bottom: .3rem; border-bottom: 1px solid var(--hd-rule); }
+h3 { margin-top: 1.75rem; }
+dd { margin-bottom: .5rem; }
+dl.field-list { color: var(--hd-muted); font-size: .9em; }
+dl.field-list > dt { font-weight: 500; }
+dl.field-list > dd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.hd-figure { margin: 1.25rem 0 1.5rem; }
+.hd-figure .hd-diagram { overflow-x: auto; border: 1px solid var(--hd-rule);
+  border-radius: 10px; padding: .5rem; background: var(--hd-page); }
+.hd-figure svg { display: block; max-width: 100%; height: auto; margin: 0 auto; }
+.hd-figure figcaption { color: var(--hd-muted); font-size: .85em; margin-top: .4rem; }
+.hd-figure details { margin-top: .75rem; }
+.hd-figure summary { cursor: pointer; color: var(--hd-muted); font-size: .9em; }
+table.hd-transitions { border-collapse: collapse; margin-top: .5rem; font-size: .88em;
+  width: 100%; }
+table.hd-transitions th, table.hd-transitions td { border: 0;
+  border-bottom: 1px solid var(--hd-rule);
+  padding: .3rem .55rem; text-align: left; vertical-align: top; }
+table.hd-transitions th { color: var(--hd-muted); font-weight: 500; }
+table.hd-transitions td.num { text-align: right; }
+table.hd-transitions code { font-size: .95em; background: none; padding: 0; }
+table.hd-transitions .src { color: var(--hd-muted); white-space: nowrap; }
+
+.hd-diags { border-left: 4px solid var(--hd-warn-rule); background: var(--hd-warn-bg);
+  border-radius: 6px; padding: .6rem 1rem; margin: 1rem 0 1.5rem; font-size: .9em; }
+.hd-diags.has-errors { border-left-color: var(--hd-err-rule); background: var(--hd-err-bg); }
+.hd-diags ul { margin: .35rem 0 0; padding-left: 1.1rem; }
+.hd-diags code { font-size: .95em; }
+.hd-diags .level-error { color: var(--hd-err-rule); font-weight: 600; }

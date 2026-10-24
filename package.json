@@ -1,0 +1,8 @@
+{
+  "name": "heddle-layout",
+  "private": true,
+  "description": "Layout engine for Heddle diagrams (Eclipse Layout Kernel via elkjs)",
+  "dependencies": {
+    "elkjs": "0.9.3"
+  }
+}

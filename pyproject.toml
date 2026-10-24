@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "heddle"
+version = "0.1.0"
+description = "Literate component documents in reStructuredText: checked models, diagrams and generated C++"
+readme = "Readme.md"
+requires-python = ">=3.10"
+dependencies = ["docutils>=0.20", "jinja2>=3.1"]  # jinja2 brings markupsafe
+
+[project.scripts]
+heddle = "heddle.__main__:main"
+
+[tool.setuptools]
+packages = ["heddle", "heddle.diagram", "heddle.gen"]
+
+[tool.setuptools.package-data]
+heddle = ["heddle.css"]
+"heddle.diagram" = ["elk_layout.cjs"]
+"heddle.gen" = ["templates/*/*.j2"]
